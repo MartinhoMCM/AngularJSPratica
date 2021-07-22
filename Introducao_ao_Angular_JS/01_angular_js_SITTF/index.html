@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meuMundo">
+
+<head>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Angular JS</title>
+</head>
+<body>
+
+    <div ng-view></div>
+  
+  
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js" integrity="sha256-h0cGsrExGgcZtSZ/fRz4AwV+Nn6Urh/3v3jFRQ0w9dQ=" crossorigin="anonymous"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-route.min.js"></script>
+   
+    <script  src="js/materialize/init.js"> </script>
+   
+  <script src="js/app/app.js"></script>
+  <script src="js/app/controllers.js"></script>
+   
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4 ng-if="!editando">Adicionar Aluno</h4>
+      <h4 ng-if="editando">Editar aluno</h4>
+      <p>Por favor insira os dados</p>
+        <div class="row">
+                <div class="input-field row">
+                    <input placeholder="Martinho " id="first_name" type="text" class="validate" ng-model="Aluno.nome">
+                    <label>Nome</label>
+                  </div>
+                  <div class="input-field row">
+                    <input placeholder="Primeira Nota " id="nota1" type="text" class="validate" ng-model="Aluno.nota1">
+                    <label>Nota 1</label>
+                  </div>
+                  <div class="input-field row">
+                    <input placeholder="Segunda Nota" id="nota2" type="text" class="validate" ng-model="Aluno.nota2">
+                    <label>Nota 2</label>
+                  </div>
+                  <div class="input-field row">
+                    <input placeholder="Terceira Nota" id="nota3" type="text" class="validate" ng-model="Aluno.nota3">
+                    <label>Nota 3</label>
+                  </div>
+            
+        </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+      <a ng-if="!editando"  class="waves-effect waves-light btn blue" ng-click="addAluno(Aluno)" >Adicionar</a>
+      <a ng-if="editando"  class="waves-effect waves-light btn blue" ng-click="salvarAluno(Aluno)" >Salvar</a>
+      
+    </div>
+  </div>
+          
+          
+</body>
+</html>

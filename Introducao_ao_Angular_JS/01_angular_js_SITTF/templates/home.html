@@ -1,0 +1,41 @@
+<div ng-include="'templates/_nav.html'"></div>
+<main class="container">
+
+        <div class="row">
+            <input type="text" placeholder="Busca" ng-model="busca">
+           
+        </div>
+  
+    <div class="row">
+        <table class="striped">
+            <thead>
+                <th>Nome</th>
+                <th>Nota 1</th>
+                <th>Nota 2</th>
+                <th>Nota 3</th>
+                <th>Media</th>
+                <th>Editar</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="aluno in alunos | filter:busca">
+                    <td>{{aluno.nome}}</td>
+                    <td>{{aluno.nota1}}</td>
+                    <td>{{aluno.nota2}}</td>
+                    <td>{{aluno.nota3}}</td>
+                    <td>{{aluno.media}}</td>
+                    <td><button class="btn blue" ng-click="editarAluno(aluno)">Editar</button>
+                        <button class="btn red" ng-click="deletarAluno(aluno)">Remover</button>
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+      
+    </div>
+    <div class="row">
+         <!-- Modal Trigger -->
+<!--   <a ng-click="editando=false"  class="waves-effect waves-light btn modal-trigger" href="#modal1">Adicionar</a> -->
+
+<a ng-click="abreAddAluno()"  class="waves-effect waves-light btn" >Adicionar</a>
+    </div>
+</main>
